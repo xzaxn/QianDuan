@@ -1,0 +1,38 @@
+:root {
+    --screen-width: 0rem;
+}
+
+.blog-title-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+}
+
+.blog-title-container .blog-title {
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.blog-title-container .blog-title-others-container {
+    display: flex;
+    padding-left: 12px;
+    padding-right: 12px;
+    flex-wrap: wrap;
+}
+
+.blog-title-container .blog-title-others-container .blog-title-others-item {
+    color: #a0a0a0;
+    padding-right: 10px;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 900px) {
+    .blog-title-container .blog-title {
+        font-size: 24px;
+    }
+}
+
+/*# sourceMappingURL=blogTitle.css.map */

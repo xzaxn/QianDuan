@@ -1,0 +1,226 @@
+@import "../index";
+@import "contentCardItem1";
+@import "contentCardItem2";
+
+.left-content {
+  width: calc(#{$contentWidth} - #{$siderWidth});
+  background-color: rgb(241, 243, 244);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .left-content-topcard {
+    width: calc(#{$contentWidth} - #{$siderWidth} - 5%);
+    height: 280px;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 20px;
+    display: block;
+
+    .left-content-topcard-img-container {
+      width: 100%;
+      height: 100%;
+
+      .left-content-topcard-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .left-content-topcard-text-container {
+      position: absolute;
+      width: calc(#{$contentWidth} - #{$siderWidth} - 10%);
+      height: 100px;
+      bottom: 10px;
+      left: 30px;
+
+      .left-content-topcard-text-title {
+        font-size: 35px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        .left-content-topcard-top-icon {
+          display: inline-block;
+          margin-right: 20px;
+          background-color: red;
+          font-size: 15px;
+          font-weight: 600;
+          color: white;
+          border-radius: 5px;
+          width: 45px;
+          text-align: center;
+        }
+      }
+
+      .left-content-topcard-text-content {
+        margin-top: 5px;
+        font-size: 18px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1; //控制行数
+        overflow: hidden;
+      }
+    }
+  }
+
+  .left-content-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .left-content-article-item {
+      transition: all 0.3s;
+      display: flex;
+      width: 95%;
+      background-color: white;
+      justify-content: flex-start;
+      align-items: center;
+      box-shadow: 0 0 2px black;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-bottom: 15px;
+
+      .left-content-article-img-container {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        .left-content-article-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .left-content-article-text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .left-content-article-title {
+          font-size: 24px;
+          line-height: 36px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          color: black;
+        }
+
+        .left-content-article-content {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2; //控制行数
+          overflow: hidden;
+          font-size: 14px;
+          color: rgb(119, 119, 119);
+        }
+
+        .left-content-article-detail {
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: row;
+          color: rgb(119, 119, 119);
+          padding-top: 10px;
+
+          .left-content-article-detail-item {
+            margin-left: 2px;
+            margin-right: 2px;
+            line-height: 12px;
+            font-size: 12px;
+
+            span {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    .left-content-article-item:hover {
+      transition: all 0.3s;
+      background-color: rgb(236, 236, 236);
+    }
+
+    .left-content-article-item:active {
+      background-color: rgb(236, 236, 236);
+    }
+  }
+}
+
+@media screen and (max-width: $stepOne) {
+  $appWidth: $stepOneWidth;
+  $appMargin: calc((#{$screenWidth} - #{$appWidth}) / 2);
+  $contentWidth: calc(#{$appWidth} - #{$siderWidth});
+
+  .left-content {
+    width: calc(#{$contentWidth} - #{$siderWidth});
+
+    .left-content-topcard {
+      width: calc(#{$contentWidth} - #{$siderWidth} - 5%);
+
+      .left-content-topcard-text-container {
+        width: calc(#{$contentWidth} - #{$siderWidth} - 12%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $stepTwo) {
+  $appWidth: $stepTwoWidth;
+  $appMargin: calc((#{$screenWidth} - #{$appWidth}) / 2);
+  $contentWidth: calc(#{$appWidth} - #{$siderWidth});
+
+  .left-content {
+    width: $contentWidth;
+
+    .left-content-topcard {
+      width: calc(#{$contentWidth} - 5%);
+
+      .left-content-topcard-text-container {
+        width: calc(#{$contentWidth} - 12%);
+      }
+    }
+
+    .right-content {
+      width: $contentWidth;
+    }
+  }
+}
+
+@media screen and (max-width: $stepThree) {
+  $appWidth: $stepThreeWidth;
+  $appMargin: 0;
+  $siderWidth: calc(#{$screenWidth} / 5 * 4);
+  $contentWidth: $stepThreeWidth;
+
+  .left-content {
+    width: $contentWidth;
+
+    .left-content-topcard {
+      width: $contentWidth;
+
+      .left-content-topcard-text-container {
+        width: calc(#{$contentWidth} - 10%);
+      }
+    }
+
+    .left-content-article {
+      .left-content-article-item {
+        .left-content-article-text-container {
+          .left-content-article-title {
+            width: 105%;
+            font-size: 20px;
+            line-height: 28px;
+          }
+        }
+      }
+    }
+
+  }
+}

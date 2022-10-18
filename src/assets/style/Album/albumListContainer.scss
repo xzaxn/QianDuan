@@ -1,0 +1,85 @@
+@import "../index";
+
+//$albumLength: 170px;
+$albumLength: 210px;
+.album-list-container {
+  width: 100%;
+  height: auto;
+  min-height: 95vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding-left: 10px;
+  padding-right: 10px;
+  .album-list-item {
+    cursor: pointer;
+    width: 24%;
+    height: $albumLength;
+    overflow: hidden;
+    margin: 1px 1px;
+
+    .ant-image {
+      display: flex;
+
+      img {
+        width: 100%;
+        height: $albumLength;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .blog-comments-container {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: $stepOne) {
+  $albumLength: 140px;
+  .album-list-container {
+    .album-list-item {
+      width: 24%;
+      height: $albumLength;
+
+      .ant-image {
+        img {
+          height: $albumLength;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $stepTwo) {
+  $albumLength: 145px;
+  .album-list-container {
+    .album-list-item {
+      width: $albumLength;
+      height: $albumLength;
+
+      .ant-image {
+        img {
+          height: $albumLength;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $stepThree) {
+  $contentWidth: $stepThreeWidth;
+  $albumLength: calc(#{$contentWidth} / 3.4);
+  .album-list-container {
+    .album-list-item {
+      width: 32.5%;
+      height: $albumLength;
+
+      .ant-image {
+        img {
+          height: $albumLength;
+        }
+      }
+    }
+  }
+}

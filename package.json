@@ -1,0 +1,52 @@
+{
+  "name": "blog",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --fix --ext .ts,.tsx,.vue,.js,.jsx",
+    "prettier": "prettier --write ."
+  },
+  "homepage": ".",
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@rollup/plugin-alias": "^3.1.9",
+    "@vitejs/plugin-legacy": "^1.7.1",
+    "antd": "^4.19.5",
+    "autoprefixer": "^10.4.2",
+    "axios": "^0.26.0",
+    "canvas-confetti": "^1.5.1",
+    "dayjs": "^1.10.8",
+    "immer": "^9.0.12",
+    "less": "^4.1.2",
+    "nprogress": "^0.2.0",
+    "postcss-pxtorem": "^6.0.0",
+    "rc-footer": "^0.6.6",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-markdown": "^8.0.2",
+    "react-router-dom": "6",
+    "react-syntax-highlighter": "^15.5.0",
+    "refractor": "^4.5.0",
+    "remark-gfm": "^3.0.1",
+    "resso": "^0.2.2",
+    "sass": "^1.49.7",
+    "use-immer": "^0.6.0",
+    "vite-plugin-compression": "^0.5.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^1.0.7",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "postcss-cli": "^9.1.0",
+    "prettier": "^2.5.1",
+    "vite": "^2.7.2"
+  }
+}

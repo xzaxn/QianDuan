@@ -1,0 +1,33 @@
+@import "../index";
+.left-content-article-item.type1 {
+  flex-direction: column;
+  height: 300px;
+
+  .left-content-article-img-container {
+    width: 100%;
+    height: 65%;
+    padding-bottom: 2px;
+
+    .left-content-article-img {
+      border-radius: 10px 10px 0 0;
+    }
+  }
+
+  .left-content-article-text-container {
+    padding: 0 5px 5px;
+    width: 94%;
+    height: 35%;
+
+    .left-content-article-detail {
+      padding-bottom: 2px;
+    }
+  }
+}
+
+@media screen and (max-width: $stepThree) {
+  .left-content-article-item.type1 {
+    .left-content-article-item {
+      height: 275px;
+    }
+  }
+}

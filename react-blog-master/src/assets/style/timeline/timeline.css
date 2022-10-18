@@ -1,0 +1,18 @@
+.timeline-container {
+    background-color: white;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+}
+
+.timeline-container .timeline {
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.timeline-container .timeline .ant-timeline-item-content {
+    font-size: 16px;
+}
+
+/*# sourceMappingURL=timeline.css.map */

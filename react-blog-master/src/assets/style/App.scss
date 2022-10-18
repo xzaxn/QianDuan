@@ -1,0 +1,44 @@
+@import "index";
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: $appWidth;
+  margin-left: $appMargin;
+  margin-right: $appMargin;
+  overflow-x: hidden;
+  z-index: 0;
+}
+
+@media screen and (max-width: $stepOne) {
+  $appWidth: $stepOneWidth;
+  $appMargin: calc((#{$screenWidth} - #{$appWidth}) / 2);
+  $contentWidth: calc(#{$appWidth} - #{$siderWidth});
+  .App {
+    width: $appWidth;
+    margin-left: $appMargin;
+    margin-right: $appMargin;
+  }
+}
+@media screen and (max-width: $stepTwo) {
+  $appWidth: $stepTwoWidth;
+  $appMargin: calc((#{$screenWidth} - #{$appWidth}) / 2);
+  $contentWidth: calc(#{$appWidth} - #{$siderWidth});
+  .App {
+    width: $appWidth;
+    margin-left: $appMargin;
+    margin-right: $appMargin;
+  }
+}
+@media screen and (max-width: $stepThree) {
+  $appWidth: $stepThreeWidth;
+  $appMargin: 0;
+  $siderWidth: calc(#{$screenWidth} / 5 * 4);
+  $contentWidth: $stepThreeWidth;
+  .App {
+    width: $appWidth;
+    margin-left: $appMargin;
+    margin-right: $appMargin;
+  }
+}

@@ -1,0 +1,37 @@
+@import "../index";
+
+.rc-footer {
+  width: $contentWidth;
+  background-color: white !important;
+}
+
+@media screen and (max-width: $stepOne) {
+  $appWidth: $stepOneWidth;
+  $appMargin: calc((#{$screenWidth} - #{$appWidth}) / 2);
+  $contentWidth: calc(#{$appWidth} - #{$siderWidth});
+
+  .rc-footer {
+    width: $contentWidth;
+  }
+}
+
+@media screen and (max-width: $stepTwo) {
+  $appWidth: $stepTwoWidth;
+  $appMargin: calc((#{$screenWidth} - #{$appWidth}) / 2);
+  $contentWidth: calc(#{$appWidth} - #{$siderWidth});
+
+  .rc-footer {
+    width: $contentWidth;
+  }
+}
+
+@media screen and (max-width: $stepThree) {
+  $appWidth: $stepThreeWidth;
+  $appMargin: 0;
+  $siderWidth: calc(#{$screenWidth} / 5 * 4);
+  $contentWidth: $stepThreeWidth;
+
+  .rc-footer {
+    width: $appWidth;
+  }
+}

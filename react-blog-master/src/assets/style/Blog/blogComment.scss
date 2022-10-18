@@ -1,0 +1,14 @@
+.blog-comments-container {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+
+  .blog-comments-item {
+  }
+
+  textarea {
+    resize: none;
+  }
+}

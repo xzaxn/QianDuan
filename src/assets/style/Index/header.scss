@@ -1,0 +1,159 @@
+@import "../index";
+
+.header {
+  width: $appWidth;
+  height: $headerHeight;
+  position: fixed;
+  top: 0;
+  left: $appMargin;
+  z-index: 10;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .search-button-min {
+    width: $headerHeight;
+    height: $headerHeight;
+    display: none !important;
+  }
+
+  .header-right-others {
+    .header-right-others-mask {
+      cursor: pointer;
+      position: fixed;
+      display: block;
+      width: $appWidth;
+      bottom: 0;
+      background-color: black;
+      z-index: -1;
+    }
+
+    .search-button-max {
+      padding-right: 50px;
+      height: $headerHeight;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .header-logo {
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: $stepOne) {
+  $appWidth: $stepOneWidth;
+  $appMargin: calc((#{$screenWidth} - #{$appWidth}) / 2);
+  $contentWidth: calc(#{$appWidth} - #{$siderWidth});
+  .header {
+    width: $appWidth;
+    left: $appMargin;
+  }
+}
+
+@media screen and (max-width: $stepTwo) {
+  $appWidth: $stepTwoWidth;
+  $appMargin: calc((#{$screenWidth} - #{$appWidth}) / 2);
+  $contentWidth: calc(#{$appWidth} - #{$siderWidth});
+  .header {
+    width: $appWidth;
+    left: $appMargin;
+  }
+}
+
+@media screen and (max-width: $stepThree) {
+  $appWidth: $stepThreeWidth;
+  $appMargin: 0;
+  $siderWidth: calc(#{$screenWidth} / 5 * 4);
+  $contentWidth: $stepThreeWidth;
+  .header {
+    width: $appWidth;
+    left: $appMargin;
+
+    .search-button-min {
+      display: initial !important;
+      width: $headerHeight !important;
+      height: $headerHeight !important;
+    }
+
+    .header-right-others {
+      width: $appWidth;
+      height: 0;
+      background-color: white;
+      position: absolute;
+      top: $headerHeight;
+      right: 0;
+      transition: height 0.4s;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+
+      .search-button-max {
+        padding-right: 0;
+        width: calc(#{$appWidth} - 40px);
+      }
+
+      @keyframes show-mask {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 0.5;
+        }
+      }
+      @keyframes hide-mask {
+        0% {
+          opacity: 0.5;
+          height: calc(#{$screenHeight} - #{$headerHeight});
+        }
+        99% {
+          opacity: 0;
+          height: calc(#{$screenHeight} - #{$headerHeight});
+        }
+        100% {
+          height: 0;
+          opacity: 0;
+        }
+      }
+
+      .header-right-others-mask.hide {
+        animation: hide-mask 0.4s;
+        animation-fill-mode: forwards;
+      }
+
+      .header-right-others-mask.show {
+        height: calc(#{$screenHeight} - #{$headerHeight});
+        animation: show-mask 0.4s;
+        animation-fill-mode: forwards;
+      }
+
+      .search-button-max {
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+    }
+
+    .header-right-others.show {
+      height: 50px;
+      transition: height 0.4s;
+
+      .search-button-max {
+        opacity: 1;
+        transition: opacity 0.4s;
+        width: calc(#{$appWidth} - 40px);
+      }
+    }
+
+    .header-right-others.hide {
+      height: 0;
+
+      .search-button-max {
+        opacity: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+:root {
+  --screen-width: 0rem;
+}
+
+.content {
+  width: calc(1400px - 250px);
+  height: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  word-break: break-all;
+}
+.content .right-content {
+  background-color: white;
+  width: 250px;
+  padding: 10px;
+}
+.content .right-content .ant-tabs-nav {
+  margin-bottom: 5px;
+}
+.content .right-content .ant-card-body {
+  padding-top: 0;
+}
+.content .right-content .right-content-detail {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 1420px) {
+  .content {
+    width: calc(1100px - 250px);
+  }
+
+  .right-content {
+    width: 250px;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .content {
+    width: calc(870px - 250px);
+    flex-direction: column;
+  }
+  .content .right-content {
+    width: calc(870px - 250px);
+  }
+}
+@media screen and (max-width: 900px) {
+  .content-hide {
+    transform: translate3d(calc(var(--screen-width) / 5 * 4), 0, 0);
+    transition: all 0.4s ease;
+  }
+
+  .content-show {
+    transform: translate3d(0, 0, 0);
+    transition: all 0.4s ease;
+  }
+
+  .content-mask {
+    display: block;
+    position: fixed;
+    width: calc(var(--screen-width) - calc(var(--screen-width) / 5 * 4));
+    height: 100vh;
+    background-color: transparent;
+    z-index: 1;
+  }
+
+  .content {
+    width: var(--screen-width);
+    flex-direction: column;
+  }
+  .content .right-content {
+    width: var(--screen-width);
+  }
+}
+
+/*# sourceMappingURL=content.css.map */

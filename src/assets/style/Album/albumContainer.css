@@ -1,0 +1,82 @@
+:root {
+    --screen-width: 0rem;
+}
+
+.album-container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.album-container .album-item:hover {
+    transition: all 0.3s;
+    background-color: #efefef;
+}
+
+.album-container .album-item {
+    transition: all 0.3s;
+    height: 210px;
+    flex-basis: 23.5%;
+    margin: 5px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+}
+
+.album-container .album-item .album-title {
+    height: 20%;
+    line-height: 40px;
+    text-align: left;
+    letter-spacing: 1px;
+    font-size: large;
+    position: relative;
+}
+
+.album-container .album-item .album-title .album-title-name {
+    display: inline-block;
+    padding-left: 10px;
+}
+
+.album-container .album-item .album-title .album-title-count {
+    position: absolute;
+    display: inline-block;
+    color: #777777;
+    right: 3px;
+    bottom: 8px;
+    height: 80%;
+    font-size: 8px;
+    letter-spacing: 0;
+}
+
+.album-container .album-item img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1420px) {
+    .album-container .album-item {
+        flex-basis: 31.5%;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .album-container .album-item {
+        flex-basis: 48%;
+        height: 230px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .album-container .album-item {
+        flex-basis: 47%;
+    }
+}
+
+/*# sourceMappingURL=albumContainer.css.map */

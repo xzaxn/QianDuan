@@ -1,0 +1,19 @@
+:root {
+  --screen-width: 0rem;
+  //--screen-height: 0rem; //--width-primary  ：变量名，css3有规则
+}
+
+$screenWidth: var(--screen-width);
+$screenHeight: 100vh;
+$siderWidth: 250px;
+$headerHeight: 50px;
+$appWidth: 1400px;
+$siderHeight: calc(#{$screenHeight} - #{$headerHeight});
+$appMargin: calc((#{$screenWidth} - #{$appWidth}) / 2);
+$contentWidth: calc(#{$appWidth} - #{$siderWidth});
+$stepOne: 1420px;
+$stepOneWidth: 1100px;
+$stepTwo: 1150px;
+$stepTwoWidth: 870px;
+$stepThree: 900px;
+$stepThreeWidth: $screenWidth;

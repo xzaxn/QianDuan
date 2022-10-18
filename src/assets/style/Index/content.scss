@@ -1,0 +1,90 @@
+@import "../index";
+
+.content {
+  width: $contentWidth;
+  height: 100%;
+  margin-top: $headerHeight;
+  display: flex;
+  justify-content: space-between;
+  word-break: break-all;
+
+  .right-content {
+    background-color: white;
+    width: $siderWidth;
+    padding: 10px;
+
+    .ant-tabs-nav {
+      margin-bottom: 5px;
+    }
+
+    .ant-card-body {
+      padding-top: 0;
+    }
+
+    .right-content-detail {
+      display: flex;
+      align-items: center;
+      height: 50px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: $stepOne) {
+  $appWidth: $stepOneWidth;
+  $appMargin: calc((#{$screenWidth} - #{$appWidth}) / 2);
+  $contentWidth: calc(#{$appWidth} - #{$siderWidth});
+  .content {
+    width: $contentWidth;
+  }
+
+  .right-content {
+    width: $siderWidth;
+  }
+}
+
+@media screen and (max-width: $stepTwo) {
+  $appWidth: $stepTwoWidth;
+  $appMargin: calc((#{$screenWidth} - #{$appWidth}) / 2);
+  $contentWidth: calc(#{$appWidth} - #{$siderWidth});
+  .content {
+    width: $contentWidth;
+    flex-direction: column;
+
+    .right-content {
+      width: $contentWidth;
+    }
+  }
+}
+
+@media screen and (max-width: $stepThree) {
+  $appWidth: $stepThreeWidth;
+  $appMargin: 0;
+  $siderWidth: calc(#{$screenWidth} / 5 * 4);
+  $contentWidth: $stepThreeWidth;
+  .content-hide {
+    transform: translate3d($siderWidth, 0, 0);
+    transition: all 0.4s ease;
+  }
+  .content-show {
+    transform: translate3d(0, 0, 0);
+    transition: all 0.4s ease;
+  }
+  .content-mask {
+    display: block;
+    position: fixed;
+    width: calc(#{$appWidth} - #{$siderWidth});
+    height: $screenHeight;
+    background-color: transparent;
+    z-index: 1;
+  }
+  .content {
+    width: $appWidth;
+    flex-direction: column;
+
+    .right-content {
+      width: $contentWidth;
+    }
+  }
+}

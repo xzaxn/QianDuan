@@ -1,0 +1,26 @@
+:root {
+  --screen-width: 0rem;
+}
+
+.rc-footer {
+  width: calc(1400px - 250px);
+  background-color: white !important;
+}
+
+@media screen and (max-width: 1420px) {
+  .rc-footer {
+    width: calc(1100px - 250px);
+  }
+}
+@media screen and (max-width: 1150px) {
+  .rc-footer {
+    width: calc(870px - 250px);
+  }
+}
+@media screen and (max-width: 900px) {
+  .rc-footer {
+    width: var(--screen-width);
+  }
+}
+
+/*# sourceMappingURL=footer.css.map */

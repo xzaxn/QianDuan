@@ -1,0 +1,169 @@
+@import "../index";
+
+.total-sider {
+  height: calc(#{$siderHeight} - 50px);
+  width: $siderWidth;
+  position: fixed;
+  left: $appMargin;
+  top: $headerHeight;
+  z-index: 1;
+  background-color: rgb(239, 239, 239);
+
+  .left-sider-container {
+    height: calc(#{$siderHeight} - 50px);
+    width: $siderWidth;
+    overflow: hidden;
+
+    .left-sider {
+      width: calc(#{$siderWidth} + 20px);
+      height: 100%;
+      overflow-y: scroll;
+      word-break: break-all;
+      .active {
+        .left-sider-menu-item-first,
+        .left-sider-menu-item {
+          background-color: rgb(236, 236, 236);
+        }
+      }
+
+      .left-sider-my {
+        width: $siderWidth;
+        height: 200px;
+        display: block;
+
+        .left-sider-my-card {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          width: 100%;
+          height: 200px;
+          cursor: pointer;
+
+          .ant-card-meta-description {
+            font-weight: 600;
+          }
+
+          .left-sider-my-img {
+            margin-top: 10px;
+            max-width: 150px;
+            height: 100px;
+          }
+        }
+      }
+
+      .left-sider-menu-item {
+        height: 45px;
+        width: 100%;
+        border-top: 1px solid rgb(220, 220, 220);
+        padding-left: 35px !important;
+        box-sizing: border-box;
+        line-height: 45px;
+        cursor: pointer;
+      }
+
+      .ant-collapse-header {
+        color: rgb(119, 119, 119);
+      }
+
+      .ant-collapse-header:active {
+        background-color: rgb(236, 236, 236);
+      }
+
+      .left-sider-menu-item-first:hover,
+      .left-sider-menu-item:hover {
+        background-color: rgb(236, 236, 236);
+      }
+
+      .ant-collapse-content-box {
+        padding: 0 !important;
+      }
+
+      .left-sider-menu {
+        width: $siderWidth;
+      }
+    }
+  }
+
+  .left-sider-footer {
+    width: #{$siderWidth};
+    height: 50px;
+    position: relative;
+    background-color: white;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-around;
+
+    .left-sider-footer-button {
+      height: 50px;
+      background-color: transparent;
+      border: none;
+      width: 33.3%;
+    }
+
+    .ant-btn-text:active {
+      background-color: rgb(239, 239, 239);
+    }
+  }
+}
+@supports (-webkit-touch-callout: none) {
+  .left-sider-footer {
+    display: none;
+  }
+}
+@media screen and (max-width: $stepOne) {
+  $appWidth: $stepOneWidth;
+  $appMargin: calc((#{$screenWidth} - #{$appWidth}) / 2);
+  $contentWidth: calc(#{$appWidth} - #{$siderWidth});
+  .total-sider {
+    left: $appMargin;
+  }
+}
+
+@media screen and (max-width: $stepTwo) {
+  $appWidth: $stepTwoWidth;
+  $appMargin: calc((#{$screenWidth} - #{$appWidth}) / 2);
+  $contentWidth: calc(#{$appWidth} - #{$siderWidth});
+  .total-sider {
+    left: $appMargin;
+  }
+}
+
+@media screen and (max-width: $stepThree) {
+  $appWidth: $stepThreeWidth;
+  $appMargin: 0;
+  $siderWidth: calc(#{$screenWidth} / 5 * 4);
+  $contentWidth: $stepThreeWidth;
+  .sider-hide {
+    transform: translate3d(calc(#{$siderWidth} - 2 * #{$siderWidth}), 0, 0);
+    transition: all 0.4s ease;
+  }
+  .sider-show {
+    transform: translate3d(0, 0, 0);
+    transition: all 0.4s ease;
+  }
+
+  .total-sider {
+    width: $siderWidth;
+    left: $appMargin;
+
+    .left-sider-container {
+      width: $siderWidth;
+
+      .left-sider {
+        width: calc(#{$siderWidth} + 20px);
+
+        .left-sider-my {
+          width: $siderWidth;
+        }
+
+        .left-sider-menu {
+          width: $siderWidth;
+        }
+      }
+    }
+
+    .left-sider-footer {
+      width: #{$siderWidth};
+    }
+  }
+}
