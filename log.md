@@ -1,5 +1,5 @@
-### 2022年10月28日：看了关于Hook的官方文档，主要看了useState、useEffect、useContext这几个基本API并敲代码练手。
-# useState、useEffect
+## 2022年10月28日：看了关于Hook的官方文档，主要看了useState、useEffect、useContext这几个基本API并敲代码练手。
+### useState、useEffect
 ```js
 function ExampleWithuseEffect() {
   const [count, setCount] = useState(0);
@@ -22,7 +22,7 @@ function ExampleWithuseEffect() {
   );
 }
 ```
-## useContext
+### useContext
 ```js
 const themes = {
     light: {
@@ -62,4 +62,4 @@ const themes = {
     );
   }
  ```
-### 2022年10月29日：写作业，搞计图
+## 2022年10月29日：写作业，搞计图
