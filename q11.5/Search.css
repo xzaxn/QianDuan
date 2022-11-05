@@ -1,0 +1,27 @@
+#searchdiv{
+  position: absolute;
+  left: 15%;;
+  top: 50px;
+  /* border: solid; */
+  
+}
+
+
+#Searchipt{
+    position: absolute;
+    height: 40px;
+    width: 50%;
+    /* background-color:rgb(249, 245, 245); */
+    border: solid;
+    border-color: #f483c7;
+    top: 40px;
+    left: 20%;
+    /* transform: translate(-50%,10%); */
+  } 
+
+#searchbtn{
+  position: absolute;
+  left: 75%;
+  top: 50px;
+} 
+
